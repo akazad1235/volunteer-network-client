@@ -4,39 +4,42 @@ import Event from '../Event/Event';
 import Header from '../Header/Header';
 
 
-const Home = () => {
-    const event = [
-        {
-            id:'1',
-            name : 'Baby',
-            img : 'babySit.png'
-        },
-        {
-            id:'2',
-            name : 'Anymel Shelter',
-            img : 'animalShelter.png'
-        },
-        {
-            id:'3',
-            name : 'Bard Housing',
-            img : 'birdHouse.png'
-        },
-        {
-            id:'4',
-            name : 'Clean Garden',
-            img : 'babySit.png'
-        },
-        {
-            id:'5',
-            name : 'Clean Garden',
-            img : 'babySit.png'
-        },
-        {
-            id:'6',
-            name : 'Clean Garden',
-            img : 'babySit.png'
-        }
-    ]
+export const event = [
+    {
+        id:'1',
+        name : 'Baby',
+        img : 'babySit.png'
+    },
+    {
+        id:'2',
+        name : 'Anymel Shelter',
+        img : 'animalShelter.png'
+    },
+    {
+        id:'3',
+        name : 'Bard Housing',
+        img : 'birdHouse.png'
+    },
+    {
+        id:'4',
+        name : 'Clean Garden',
+        img : 'babySit.png'
+    },
+    {
+        id:'5',
+        name : 'Clean Garden',
+        img : 'babySit.png'
+    },
+    {
+        id:'6',
+        name : 'Clean Garden',
+        img : 'babySit.png'
+    }
+]
+
+
+ const Home = () => {
+    
     return (
         <div  style={{margin:'0 auto'}}>
             <Header></Header>
