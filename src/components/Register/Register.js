@@ -2,11 +2,12 @@ import React, { useContext, useState } from 'react';
 import './Register.css';
 import logo from '../../images/logos/Group-1329.png';
 import { Button } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 import { event } from '../Home/Home';
 
 const Register = () => {
+    let history = useHistory();
     let {id }= useParams();
    const singleEvent = event.find(evt => evt.id === id)
 
@@ -23,10 +24,10 @@ const Register = () => {
  const handleInputDate = (e) => {
     setInputDate({ [e.target.name]: e.target.value})
  }
- console.log({inputData});
- console.log({inputDate});
 
-    const handleRegister = (e) => {
+
+    const handleRegister = () => {
+        history.push("/eventActivitis");
         const newVolunteer = {eventName,img,  ...loggedInUser,...inputData, ...inputDate};
         fetch('http://localhost:5000/addUser', {
             method: 'POST',
@@ -37,8 +38,10 @@ const Register = () => {
         .then( data => {
             console.log(data);
         })
-        e.preventDefault();
+   
     }
+  
+    
     return (
         <div className="wrapper">
             <img src={logo} alt="" />

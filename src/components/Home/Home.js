@@ -51,7 +51,7 @@ export const event = [
 
             <div className="row">
                 {
-                    event.map( events => <Event eventt = {events}></Event>)
+                    event.map( events => <Event event = {events}></Event>)
                 }
                
             </div>

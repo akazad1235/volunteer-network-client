@@ -41,9 +41,9 @@ function App() {
           {/* <PrivateRoute path="/register">
             <Register></Register>
           </PrivateRoute> */}
-          <Route path="/event">
+          <PrivateRoute path="/eventActivitis">
             <EventTask></EventTask>
-         </Route>
+         </PrivateRoute>
          <Route path="/admin">
             <Admin></Admin>
          </Route>
