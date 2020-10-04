@@ -10,16 +10,14 @@ const Register = () => {
     let {id }= useParams();
    const singleEvent = event.find(evt => evt.id === id)
 
-   const {eventName} = singleEvent;
-   //console.log(singleEvent);
+   const {eventName, img} = singleEvent;
+   //console.log(img);
 
     
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     //new date and description
-    // const [inputData, setInputData] = useState({
-    //     desc:""
-
-    // })
+    const [inputData, setInputData] = useState({})
+    const [inputDate, setInputDate] = useState({})
 
 
 
@@ -41,11 +39,18 @@ const Register = () => {
     //        setInputData(desc)
     // }
 
-
+ const handleInput = (e) => {
+    setInputData({ [e.target.name]: e.target.value})
+ }
+ const handleInputDate = (e) => {
+    setInputDate({ [e.target.name]: e.target.value})
+ }
+ console.log({inputData});
+ console.log({inputDate});
 
     const handleRegister = (e) => {
         //let dates = e.target.value;
-        const newVolunteer = {eventName, ...loggedInUser};
+        const newVolunteer = {eventName,img,  ...loggedInUser,...inputData, ...inputDate};
         fetch('http://localhost:5000/addUser', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -69,11 +74,13 @@ const Register = () => {
                     <input  className="form-control" type="text" name="name"    value={eventName} />
                     <Button className="form-control" onClick={handleRegister}>Register</Button> */}
 
-                    <form onSubmit={handleRegister}  >
-                       <input className="form-control" type="text" name="name"    value={loggedInUser.name}/>
+                    <form >
+                       <input className="form-control" type="text" name="name"    value={loggedInUser.name} />
                         <input className="form-control" type="text"  name="email"  value={loggedInUser.email}/>
-                        <input type="text" name="desc"  value="ddd"/>
-                        <Button type="submit" >Add User</Button>
+                        <input  className="form-control"type="text" name="desc"  onBlur={(e) => handleInput(e)}/>
+                        <input className="form-control" type="date" name="dates"  onBlur={(e) => handleInputDate(e)}/>
+                        <input  className="form-control" type="text" name="eventName" value={eventName}   />
+                        <Button onClick={handleRegister}  >Add User</Button>
                         
                     </form>
                    

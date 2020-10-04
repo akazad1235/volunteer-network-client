@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import img from '../../images/event-img/birdHouse.png'
 import { Button } from 'react-bootstrap';
 import FetchTask from './FetchTask';
+import { UserContext } from '../../App';
 
 
 const EventTask = () => {
-
-          const [eventTask, setEventTaks] = useState([]);
+         const [loggedInUser, setLoggedInUser] = useContext(UserContext) 
+         const [eventTask, setEventTaks] = useState([]);
 
           
           
           useEffect(() => {
-            fetch('http://localhost:5000/showEvents')
+            fetch('http://localhost:5000/showEvents?email='+loggedInUser.email)
             .then( res => res.json())
             .then( data =>setEventTaks(data))
           })
