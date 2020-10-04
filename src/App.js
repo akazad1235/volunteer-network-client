@@ -21,7 +21,7 @@ function App() {
    const [loggedInUser, setLoggedInUser] = useState({});
 
   return (
-   
+   <div className="container">
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <p>Name: {loggedInUser.name}</p>
       <p>Email: {loggedInUser.email}</p>
@@ -41,6 +41,9 @@ function App() {
           {/* <PrivateRoute path="/register">
             <Register></Register>
           </PrivateRoute> */}
+          <Route path="/event">
+            <EventTask></EventTask>
+         </Route>
          <Route path="/admin">
             <Admin></Admin>
          </Route>
@@ -51,7 +54,7 @@ function App() {
       </Router>
 
       </UserContext.Provider>
-
+      </div>
   );
 }
 

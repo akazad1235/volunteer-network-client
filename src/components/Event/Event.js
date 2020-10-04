@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import event from '../../images/event-img/babySit.png';
 
 const Event = (props) => {
-    const {id, name, img} = props.eventt;
+
+    const {id, eventName, img} = props.eventt;
     
     return (
         <div className="col-md-3">
@@ -13,7 +14,7 @@ const Event = (props) => {
                                 <Card.Img variant="top" src={event} alt="evnt" />
                                 <Card.Footer>
                                 {/* <small className="text-muted"></small> */}
-                                <Link to={`/register/${id}`}>{name}</Link>
+                                <Link to={`/register/${id}`}>{eventName}</Link>
                                 
                                 
                                 </Card.Footer>

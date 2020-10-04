@@ -7,32 +7,32 @@ import Header from '../Header/Header';
 export const event = [
     {
         id:'1',
-        name : 'Baby',
+        eventName : 'Baby',
         img : 'babySit.png'
     },
     {
         id:'2',
-        name : 'Anymel Shelter',
+        eventName : 'Anymel Shelter',
         img : 'animalShelter.png'
     },
     {
         id:'3',
-        name : 'Bard Housing',
+        eventName : 'Bard Housing',
         img : 'birdHouse.png'
     },
     {
         id:'4',
-        name : 'Clean Garden',
+        eventName : 'Clean Garden',
         img : 'babySit.png'
     },
     {
         id:'5',
-        name : 'Clean Garden',
+        eventName : 'Clean Garden',
         img : 'babySit.png'
     },
     {
         id:'6',
-        name : 'Clean Garden',
+        eventName : 'Clean Garden',
         img : 'babySit.png'
     }
 ]
