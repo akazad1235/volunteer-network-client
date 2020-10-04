@@ -11,33 +11,11 @@ const Register = () => {
    const singleEvent = event.find(evt => evt.id === id)
 
    const {eventName, img} = singleEvent;
-   //console.log(img);
-
     
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    //new date and description
     const [inputData, setInputData] = useState({})
     const [inputDate, setInputDate] = useState({})
 
-
-
-
-    // const handleDate = (date) => {
-    //     const newDate = {...inputData}
-    //     newDate.dates = date;
-    //     setInputData(newDate)
-    // }
-    // const handleDesc = (desc) => {
-    //     const newDesc = {...inputData}
-    //     newDesc.desc = desc;
-    //     setInputData(newDesc)
-    // }
-
-    // const handleDesc = (e)=> {
-    //        const desc =  e.target.value;
-    //       // console.log(desc);
-    //        setInputData(desc)
-    // }
 
  const handleInput = (e) => {
     setInputData({ [e.target.name]: e.target.value})
@@ -49,7 +27,6 @@ const Register = () => {
  console.log({inputDate});
 
     const handleRegister = (e) => {
-        //let dates = e.target.value;
         const newVolunteer = {eventName,img,  ...loggedInUser,...inputData, ...inputDate};
         fetch('http://localhost:5000/addUser', {
             method: 'POST',
@@ -67,12 +44,7 @@ const Register = () => {
             <img src={logo} alt="" />
             <div className="login-area">
                     <h4>Register</h4>
-                    {/* <input className="form-control" type="text"    value={loggedInUser.name}/>
-                    <input className="form-control" type="text"    value={loggedInUser.email}/>
-                    <input className="form-control"   type="date" name="date"     placeholder="date"/>
-                    <input className="form-control" onBlur={handleDesc} type="text" name="description"     placeholder="Description"/>
-                    <input  className="form-control" type="text" name="name"    value={eventName} />
-                    <Button className="form-control" onClick={handleRegister}>Register</Button> */}
+
 
                     <form >
                        <input className="form-control" type="text" name="name"    value={loggedInUser.name} />
