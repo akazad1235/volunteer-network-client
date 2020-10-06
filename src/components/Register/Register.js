@@ -30,7 +30,7 @@ const Register = () => {
     const handleRegister = () => {
         history.push("/eventActivitis");
         const newVolunteer = {eventName,img,  ...loggedInUser,...inputData, ...inputDate};
-        fetch('http://localhost:5000/addUser', {
+        fetch('https://desolate-wave-80407.herokuapp.com/addUser', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newVolunteer)
@@ -42,7 +42,6 @@ const Register = () => {
    
     }
   
-    
     return (
         <div className="wrapper">
             <img src={logo} alt="" />
