@@ -5,11 +5,12 @@ import { Button } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 import { event } from '../Home/Home';
+import FakeData from '../FakeData/FakeData';
 
 const Register = () => {
     let history = useHistory();
     let {id }= useParams();
-   const singleEvent = event.find(evt => evt.id === id)
+   const singleEvent = FakeData.find(evt => evt.id === id)
 
    const {eventName, img} = singleEvent;
     

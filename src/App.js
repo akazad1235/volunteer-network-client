@@ -13,6 +13,8 @@ import Register from './components/Register/Register';
 import EventTask from './components/EventTask/EventTask';
 import Admin from './components/Admin/Admin';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Donation from './components/Donation/Donation';
+import NotMatch from './components/NotMatch/NotMatch';
 
 export const UserContext = createContext();
 
@@ -23,9 +25,6 @@ function App() {
   return (
    <div className="container">
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <p>Name: {loggedInUser.name}</p>
-      <p>Email: {loggedInUser.email}</p>
-      
       <Router>
         <Switch>
 
@@ -38,17 +37,20 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          {/* <PrivateRoute path="/register">
-            <Register></Register>
-          </PrivateRoute> */}
           <PrivateRoute path="/eventActivitis">
             <EventTask></EventTask>
          </PrivateRoute>
          <Route path="/admin">
             <Admin></Admin>
          </Route>
+         <Route path="/donation">
+            <Donation></Donation>
+         </Route>
           <Route path="/">
           <Home></Home>
+          </Route>
+          <Route path="*">
+            <NotMatch />
           </Route>
         </Switch>
       </Router>

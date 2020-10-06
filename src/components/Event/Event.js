@@ -11,17 +11,12 @@ const Event = (props) => {
         <div className="col-md-3">
                         <CardGroup>
                         <Card>
-                                <Card.Img variant="top" src={require(`../../images/event-img/${img}`)} alt="evnt" />
-                                <Card.Footer>
-                                {/* <small className="text-muted"></small> */}
-                                <Link to={`/register/${id}`}>{eventName}</Link>
-                                
-                                
-                                </Card.Footer>
-                        </Card>
-                            
-                        </CardGroup>
-                       
+                            <Link to={`/register/${id}`}><Card.Img variant="top" src={require(`../../images/event-img/${img}`)} alt="evnt" /></Link>
+                            <Card.Footer>
+                            <Link to={`/register/${id}`}>{eventName}</Link>
+                            </Card.Footer>
+                        </Card>   
+                        </CardGroup>      
         </div>
     );
 };
